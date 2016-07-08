@@ -30,6 +30,10 @@ var AGMultiButton = InputBaseComponent.extend({
 						}
 					}
 
+					if (params === "" && _mySelf.valueIfEmpty !== "") {
+						params = _mySelf.valueIfEmpty;
+					}
+
 					Dashboards.fireChange(_mySelf.parameter, params);
 				}
 			}
