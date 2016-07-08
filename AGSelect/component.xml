@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DesignerComponent>
+  <Header>
+    <Name>AG Select</Name>
+    <IName>AGSelect</IName>
+    <Description>AG Select Component</Description>
+    <Category>AGCOMPONENTS</Category>
+    <CatDescription>AG components</CatDescription>
+    <Type>PalleteEntry</Type>
+    <Version>1.0</Version>
+  </Header>
+  <Contents>
+    <Model>
+      <Property>parameter</Property>
+      <Property>executeAtStart</Property>
+      <Property>htmlObject</Property>
+      <Property name="parameters">xActionArrayParameter</Property>
+      <Definition name="queryDefinition">
+        <Property>dataSource</Property>
+      </Definition>
+      <Property>valuesArray</Property>
+      <Property>valueAsId</Property>
+      <Property>preExecution</Property>
+      <Property>postExecution</Property>
+      <Property>postFetch</Property>
+      <Property>preChange</Property>
+      <Property>postChange</Property>
+      <Property>tooltip</Property>
+      <Property>listeners</Property>
+      <Property>multiple</Property>
+      <Property>search</Property>
+      <Property>valueIfEmpty</Property>
+      <Property>title</Property>
+    </Model>
+    <Implementation supportsLegacy="true" supportsAMD="true">
+      <Code src="AGSelect.js"/>
+      <Styles>
+        <Style version="1.10.0" src="bootstrap-select.min.css">AGBootstrapSelect</Style>
+      </Styles>
+      <Dependencies>
+        <Dependency version="1.10.0" src="bootstrap-select.min.js">AGBootstrapSelect</Dependency>
+        <Dependency version="1.10.0" src="defaults-pt_BR.min.js">AGBootstrapSelectPtBR</Dependency>
+      </Dependencies>
+      <CustomProperties>
+
+        <DesignerProperty>
+          <Header>
+            <Name>multiple</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue>false</DefaultValue>
+            <Description>Multiple values</Description>
+            <Tooltip>Defines if the select accept multiple values</Tooltip>
+            <InputType>Boolean</InputType>
+            <OutputType>Boolean</OutputType>
+            <Order>55</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+        </DesignerProperty>
+
+        <DesignerProperty>
+          <Header>
+            <Name>search</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue>false</DefaultValue>
+            <Description>Search values</Description>
+            <Tooltip>Defines if the select search values</Tooltip>
+            <InputType>Boolean</InputType>
+            <OutputType>Boolean</OutputType>
+            <Order>56</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+        </DesignerProperty>
+
+        <DesignerProperty>
+          <Header>
+            <Name>title</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue></DefaultValue>
+            <Description>Title</Description>
+            <Tooltip>Defines title to show if no values is selected</Tooltip>
+            <InputType>String</InputType>
+            <OutputType>String</OutputType>
+            <Order>57</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+        </DesignerProperty>
+
+        <DesignerProperty>
+          <Header>
+            <Name>valueIfEmpty</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue></DefaultValue>
+            <Description>Value if empty</Description>
+            <Tooltip>Defines value if no values is selected</Tooltip>
+            <InputType>String</InputType>
+            <OutputType>String</OutputType>
+            <Order>58</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+        </DesignerProperty>
+
+      </CustomProperties>
+    </Implementation>
+  </Contents>
+</DesignerComponent>
