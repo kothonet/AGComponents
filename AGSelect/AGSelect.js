@@ -2,6 +2,12 @@ var AGSelect = InputBaseComponent.extend({
 
 	draw: function(myData) {
 		var mySelf = this;
+		var varChange = Dashboards.getParameterValue("sel_" + mySelf.parameter);
+		if (varChange !== undefined && varChange === "change") {
+			Dashboards.setParameter("sel_" + mySelf.parameter, "");
+			return;
+		}
+
 		var param = mySelf._getParameterValue();
 
 		var mySelect = $("<select/>").attr({
@@ -19,6 +25,7 @@ var AGSelect = InputBaseComponent.extend({
 					value = _mySelf.valueIfEmpty;
 				}
 
+				Dashboards.setParameter("sel_" + _mySelf.parameter, "change");
 		        Dashboards.fireChange(_mySelf.parameter, value);
 			}
 	    })(mySelf));
