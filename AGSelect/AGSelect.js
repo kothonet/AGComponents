@@ -23,8 +23,8 @@ var AGSelect = InputBaseComponent.extend({
 
 				if (value === "" && _mySelf.valueIfEmpty !== "") {
 					value = _mySelf.valueIfEmpty;
-					sessionStorage.setItem("AGComponents_AGSelect", "change");
 				}
+				sessionStorage.setItem("AGComponents_AGSelect", "change");
 		        Dashboards.fireChange(_mySelf.parameter, value);
 			}
 	    })(mySelf));
