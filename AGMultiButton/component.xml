@@ -31,6 +31,7 @@
       <Property>size</Property>
       <Property>style</Property>
       <Property>buttonType</Property>
+      <Property>valueIfEmpty</Property>
     </Model>
     <Implementation supportsLegacy="true" supportsAMD="true">
       <Code src="AGMultiButton.js"/>
@@ -121,6 +122,21 @@
             <Value display="Check Box">checkbox</Value>
             <Value display="Radio Button">radio</Value>
           </Values>
+        </DesignerProperty>
+
+        <DesignerProperty>
+          <Header>
+            <Name>valueIfEmpty</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue></DefaultValue>
+            <Description>Value if empty</Description>
+            <Tooltip>Defines value if no values is selected</Tooltip>
+            <InputType>String</InputType>
+            <OutputType>String</OutputType>
+            <Order>59</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
         </DesignerProperty>
 
       </CustomProperties>
