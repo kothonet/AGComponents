@@ -4,7 +4,7 @@ var AGSelect = InputBaseComponent.extend({
 		var mySelf = this;
 		var varChange = sessionStorage.getItem("AGComponents_AGSelect_" + mySelf.parameter);
 		if (varChange !== null && varChange === "change") {
-			sessionStorage.removeItem("AGComponents_AGSelect");
+			sessionStorage.removeItem("AGComponents_AGSelect_" + mySelf.parameter);
 			return;
 		}
 
