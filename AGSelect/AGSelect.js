@@ -2,7 +2,7 @@ var AGSelect = InputBaseComponent.extend({
 
 	draw: function(myData) {
 		var mySelf = this;
-		var varChange = sessionStorage.getItem("AGComponents_AGSelect");
+		var varChange = sessionStorage.getItem("AGComponents_AGSelect_" + mySelf.parameter);
 		if (varChange !== null && varChange === "change") {
 			sessionStorage.removeItem("AGComponents_AGSelect");
 			return;
@@ -24,7 +24,7 @@ var AGSelect = InputBaseComponent.extend({
 				if (value === "" && _mySelf.valueIfEmpty !== "") {
 					value = _mySelf.valueIfEmpty;
 				}
-				sessionStorage.setItem("AGComponents_AGSelect", "change");
+				sessionStorage.setItem("AGComponents_AGSelect_" + _mySelf.parameter, "change");
 		        Dashboards.fireChange(_mySelf.parameter, value);
 			}
 	    })(mySelf));
