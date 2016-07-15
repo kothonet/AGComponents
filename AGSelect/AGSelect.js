@@ -19,16 +19,10 @@ var AGSelect = InputBaseComponent.extend({
 
 		mySelect.on("change", (function(_mySelf) {
 			return function() {
-				var value = $(this).val() !== null ? $(this).val().toString() : "";
-
-				if (value === "" && _mySelf.valueIfEmpty !== "") {
-					value = _mySelf.valueIfEmpty;
-				}
-
 				if (_mySelf.listeners.valueOf(_mySelf.parameter) > -1) {
 					sessionStorage.setItem("AGComponents_AGSelect_" + _mySelf.parameter, "change");
 				}
-		        Dashboards.fireChange(_mySelf.parameter, value);
+
 				Dashboards.processChange(_mySelf.name);
 			}
 	    })(mySelf));
@@ -64,11 +58,18 @@ var AGSelect = InputBaseComponent.extend({
 		$("#" + this.htmlObject).append(mySelect);
 
 		mySelect.selectpicker('render');
-	}
+	},
 
 	getValue: function() {
 		var mySelf = this;
-		return mySelf._getParameterValue();
+		var object = $("#" + mySelf.htmlObject).find("select");
+		var value = $(object).val() !== null ? $(object).val().toString() : "";
+
+		if (value === "" && _mySelf.valueIfEmpty !== "") {
+			value = _mySelf.valueIfEmpty;
+		}
+
+		return value;
 	}
 
 });
