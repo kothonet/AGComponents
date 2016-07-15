@@ -29,7 +29,7 @@ var AGSelect = InputBaseComponent.extend({
 					_mySelf.value = _mySelf.valueIfEmpty;
 				}
 
-				uf (_mySelf.value != _mySelf._getParameterValue()) {
+				if (_mySelf.value != _mySelf._getParameterValue()) {
 					Dashboards.processChange(_mySelf.name);
 				}
 			}
