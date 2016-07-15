@@ -36,6 +36,8 @@ var AGMultiButton = InputBaseComponent.extend({
 
 					Dashboards.fireChange(_mySelf.parameter, params);
 				}
+				
+				Dashboards.processChanbe(_mySelf.name);
 			}
 		})(myDiv, mySelf));
 

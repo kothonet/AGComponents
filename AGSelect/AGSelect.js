@@ -29,6 +29,7 @@ var AGSelect = InputBaseComponent.extend({
 					sessionStorage.setItem("AGComponents_AGSelect_" + _mySelf.parameter, "change");
 				}
 		        Dashboards.fireChange(_mySelf.parameter, value);
+				Dashboards.processChange(_mySelf.name);
 			}
 	    })(mySelf));
 
