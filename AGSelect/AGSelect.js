@@ -66,4 +66,9 @@ var AGSelect = InputBaseComponent.extend({
 		mySelect.selectpicker('render');
 	}
 
+	getValue: function() {
+		var mySelf = this;
+		return mySelf._getParameterValue();
+	}
+
 });

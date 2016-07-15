@@ -36,8 +36,8 @@ var AGMultiButton = InputBaseComponent.extend({
 
 					Dashboards.fireChange(_mySelf.parameter, params);
 				}
-				
-				Dashboards.processChanbe(_mySelf.name);
+
+				Dashboards.processChange(_mySelf.name);
 			}
 		})(myDiv, mySelf));
 
@@ -74,6 +74,11 @@ var AGMultiButton = InputBaseComponent.extend({
 
 		$("#" + this.htmlObject).empty();
 		$("#" + this.htmlObject).append(myDiv);
+	}
+
+	getValue: function() {
+		var mySelf = this;
+		return mySelf._getParameterValue();
 	}
 
 });
