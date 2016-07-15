@@ -74,6 +74,11 @@ var AGMultiButton = InputBaseComponent.extend({
 
 		$("#" + this.htmlObject).empty();
 		$("#" + this.htmlObject).append(myDiv);
+
+		if (mySelf.value && mySelf.value != param) {
+			mySelf.value = param;
+			mySelf.processChange(mySelf.name);
+		}
 	},
 
 	getValue: function() {

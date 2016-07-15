@@ -66,6 +66,11 @@ var AGSelect = InputBaseComponent.extend({
 		$("#" + this.htmlObject).append(mySelect);
 
 		mySelect.selectpicker('render');
+		
+		if (mySelf.value && mySelf.value != param) {
+			mySelf.value = param;
+			mySelf.processChange(mySelf.name);
+		}
 	},
 
 	getValue: function() {
