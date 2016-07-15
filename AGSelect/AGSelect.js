@@ -23,7 +23,15 @@ var AGSelect = InputBaseComponent.extend({
 					sessionStorage.setItem("AGComponents_AGSelect_" + _mySelf.parameter, "change");
 				}
 
-				Dashboards.processChange(_mySelf.name);
+				_mySelf.value = $(this).val() !== null ? $(this).val().toString() : "";
+
+				if (_mySelf.value === "" && _mySelf.valueIfEmpty !== "") {
+					_mySelf.value = _mySelf.valueIfEmpty;
+				}
+
+				uf (_mySelf.value != _mySelv._getParameterValue()) {
+					Dashboards.processChange(_mySelf.name);
+				}
 			}
 	    })(mySelf));
 
@@ -62,14 +70,7 @@ var AGSelect = InputBaseComponent.extend({
 
 	getValue: function() {
 		var mySelf = this;
-		var object = $("#" + mySelf.htmlObject).find("select");
-		var value = $(object).val() !== null ? $(object).val().toString() : "";
-
-		if (value === "" && _mySelf.valueIfEmpty !== "") {
-			value = _mySelf.valueIfEmpty;
-		}
-
-		return value;
+		return mySelf.value;
 	}
 
 });

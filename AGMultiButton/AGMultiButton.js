@@ -10,7 +10,34 @@ var AGMultiButton = InputBaseComponent.extend({
 
 		myDiv.on("click", "label", (function(_myDiv, _mySelf) {
 		  	return function() {
-				Dashboards.processChange(_mySelf.name);
+				if($(this).find("input").attr("type") === "radio") {
+					_mySelf.value = $(this).find("input").val();
+				} else {
+					var inputs = $(_myDiv).find("label").find("input");
+					var params = "";
+					for (var i=0; i<inputs.length; i++) {
+
+						var active = $(inputs[i]).parent().hasClass("active");
+						if ($(inputs[i]).parent().attr("id") === $(this).attr("id")) {
+							active = !active;
+						}
+
+						if (active) {
+							params += params !== "" ? "," : "";
+							params += $(inputs[i]).val();
+						}
+					}
+
+					if (params === "" && _mySelf.valueIfEmpty !== "") {
+						params = _mySelf.valueIfEmpty;
+					}
+
+					_mySelf.value = params;
+				}
+
+				if (_mySelf.value != _mySelf._getParameterValue()) {
+					Dashboards.processChange(_mySelf.name);
+				}
 			}
 		})(myDiv, mySelf));
 
@@ -51,37 +78,7 @@ var AGMultiButton = InputBaseComponent.extend({
 
 	getValue: function() {
 		var mySelf = this;
-		var object = $("#" + mySelf.htmlObject + " > div");
-		var value;
-
-		if($(object).find("input").attr("type") === "radio") {
-			if ($(object).hasClass("active")) return;
-
-			value = $(object).find("input").val();
-		} else {
-			var inputs = $(object).find("label").find("input");
-			var params = "";
-			for (var i=0; i<inputs.length; i++) {
-
-				var active = $(inputs[i]).parent().hasClass("active");
-				if ($(inputs[i]).parent().attr("id") === $(object).attr("id")) {
-					active = !active;
-				}
-
-				if (active) {
-					params += params !== "" ? "," : "";
-					params += $(inputs[i]).val();
-				}
-			}
-
-			if (params === "" && mySelf.valueIfEmpty !== "") {
-				params = mySelf.valueIfEmpty;
-			}
-
-			value = params;
-		}
-
-		return value;
+		return mySelf.value;
 	}
 
 });
