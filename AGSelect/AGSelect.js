@@ -67,7 +67,7 @@ var AGSelect = InputBaseComponent.extend({
 
 		mySelect.selectpicker('render');
 
-		if (mySelf.value && mySelf.value != param) {
+		if (!mySelf.value || mySelf.value != param) {
 			mySelf.value = param;
 			Dashboards.processChange(mySelf.name);
 		}

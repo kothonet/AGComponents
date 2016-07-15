@@ -75,7 +75,7 @@ var AGMultiButton = InputBaseComponent.extend({
 		$("#" + this.htmlObject).empty();
 		$("#" + this.htmlObject).append(myDiv);
 
-		if (mySelf.value && mySelf.value != param) {
+		if (!mySelf.value || mySelf.value != param) {
 			mySelf.value = param;
 			Dashboards.processChange(mySelf.name);
 		}
