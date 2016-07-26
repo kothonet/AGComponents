@@ -39,9 +39,10 @@ var AGSelect = InputBaseComponent.extend({
 	        mySelect.attr("multiple", "");
 	    }
 
-	    if (mySelf.search) {
-	        mySelect.attr("data-live-search","true");
-	    }
+	    // if (mySelf.search) {
+	    //     mySelect.attr("data-live-search","true");
+	    // }
+		mySelect.attr("data-live-search", mySelf.search.toString());
 
 		if (mySelf.title !== "") {
 			mySelect.attr("title", mySelf.title);
