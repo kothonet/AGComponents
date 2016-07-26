@@ -36,6 +36,7 @@
       <Code src="AGSelect.js"/>
       <Styles>
         <Style version="1.10.0" src="bootstrap-select.min.css">AGBootstrapSelect</Style>
+        <Style version="1.0" src="AGSelect.css">AGSelect</Style>
       </Styles>
       <Dependencies>
         <Dependency version="1.10.0" src="bootstrap-select.min.js">AGBootstrapSelect</Dependency>

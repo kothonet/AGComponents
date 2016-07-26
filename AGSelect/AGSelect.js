@@ -11,7 +11,7 @@ var AGSelect = InputBaseComponent.extend({
 		var param = mySelf._getParameterValue();
 
 		var mySelect = $("<select/>").attr({
-        	class: "selectpicker show-tick show-menu-arrow",
+        	class: "selectpicker show-menu-arrow",
         	"data-width": "fit",
         	id: "sel_" + this.htmlObject,
         	"data-size": "5",
@@ -39,10 +39,9 @@ var AGSelect = InputBaseComponent.extend({
 	        mySelect.attr("multiple", "");
 	    }
 
-	    // if (mySelf.search) {
-	    //     mySelect.attr("data-live-search","true");
-	    // }
-		mySelect.attr("data-live-search", mySelf.search.toString());
+	    if (mySelf.search) {
+	        mySelect.attr("data-live-search","true");
+	    }
 
 		if (mySelf.title !== "") {
 			mySelect.attr("title", mySelf.title);
