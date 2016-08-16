@@ -10,6 +10,10 @@ var AGSelect = InputBaseComponent.extend({
 
 		var param = mySelf._getParameterValue();
 
+		if (myData.length > 0 && myData.indexOf(param) < 0) {
+			param = myData[0];
+		}
+
 		var mySelect = $("<select/>").attr({
         	class: "selectpicker show-menu-arrow",
         	"data-width": "fit",

@@ -32,7 +32,7 @@
       <Property>valueIfEmpty</Property>
       <Property>title</Property>
     </Model>
-    <Implementation supportsLegacy="true" supportsAMD="true">
+    <Implementation supportsLegacy="true" supportsAMD="false">
       <Code src="AGSelect.js"/>
       <Styles>
         <Style version="1.10.0" src="bootstrap-select.min.css">AGBootstrapSelect</Style>

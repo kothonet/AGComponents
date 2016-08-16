@@ -33,7 +33,7 @@
       <Property>buttonType</Property>
       <Property>valueIfEmpty</Property>
     </Model>
-    <Implementation supportsLegacy="true" supportsAMD="true">
+    <Implementation supportsLegacy="true" supportsAMD="false">
       <Code src="AGMultiButton.js"/>
       <Styles>
       </Styles>
