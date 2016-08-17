@@ -10,8 +10,20 @@ var AGSelect = InputBaseComponent.extend({
 
 		var param = mySelf._getParameterValue();
 
-		if (myData.length > 0 && myData.indexOf(param) < 0) {
-			param = myData[0][0];
+		if (myData.length > 0) {
+			var found = false;
+
+			for (var i=0; i<myData.length; i++) {
+				var id = mySelf.valueAsId ? myData[i][1] : myData[i][0];
+
+				if (id === param) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				param = mySelf.valueAsId ? myData[0][1] : myData[0][0];
+			}
 		}
 
 		var mySelect = $("<select/>").attr({
