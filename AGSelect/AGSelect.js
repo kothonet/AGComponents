@@ -1,6 +1,5 @@
 var AGSelect = InputBaseComponent.extend({
 
-
 	draw: function(myData) {
 		var mySelf = this;
 
@@ -11,21 +10,19 @@ var AGSelect = InputBaseComponent.extend({
 
 		var param = mySelf._getParameterValue();
 
-		if (myData.length > 0) {
-			var found = false;
+		if (!mySelf.multiple) {
+			if (myData.length > 0) {
+				var found = false;
 
-			for (var i=0; i<myData.length; i++) {
-				var id = mySelf.valueAsId ? myData[i][1] : myData[i][0];
+				for (var i=0; i<myData.length; i++) {
+					var id = mySelf.valueAsId ? myData[i][1] : myData[i][0];
 
-				if (id === param) {
-					found = true;
-					break;
+					if (id === param) {
+						found = true;
+						break;
+					}
 				}
-			}
-			if (!found) {
-				if (mySelf.multiple) {
-					param = mySelf.valueIfEmpty;
-				} else {
+				if (!found) {
 					param = mySelf.valueAsId ? myData[0][1] : myData[0][0];
 				}
 			}
