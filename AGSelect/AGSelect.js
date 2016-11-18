@@ -3,10 +3,9 @@ var AGSelect = InputBaseComponent.extend({
 
 	draw: function(myData) {
 		var mySelf = this;
-		// this.varChange = sessionStorage.getItem("AGComponents_AGSelect_" + mySelf.parameter);
+
 		if (mySelf.varChange && mySelf.varChange === "change") {
 			mySelf.varChange = null;
-			//sessionStorage.removeItem("AGComponents_AGSelect_" + mySelf.parameter);
 			return;
 		}
 
@@ -24,7 +23,11 @@ var AGSelect = InputBaseComponent.extend({
 				}
 			}
 			if (!found) {
-				param = mySelf.valueAsId ? myData[0][1] : myData[0][0];
+				if (mySelf.multiple) {
+					param = mySelf.valueIfEmpty;
+				} else {
+					param = mySelf.valueAsId ? myData[0][1] : myData[0][0];
+				}
 			}
 		}
 
@@ -38,7 +41,6 @@ var AGSelect = InputBaseComponent.extend({
 		mySelect.on("change", (function(_mySelf) {
 			return function() {
 				if (_mySelf.listeners.valueOf(_mySelf.parameter) > -1) {
-					//sessionStorage.setItem("AGComponents_AGSelect_" + _mySelf.parameter, "change");
 					_mySelf.varChange = "change";
 				}
 
