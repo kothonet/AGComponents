@@ -1,10 +1,12 @@
 var AGSelect = InputBaseComponent.extend({
 
+
 	draw: function(myData) {
 		var mySelf = this;
-		var varChange = sessionStorage.getItem("AGComponents_AGSelect_" + mySelf.parameter);
-		if (varChange !== null && varChange === "change") {
-			sessionStorage.removeItem("AGComponents_AGSelect_" + mySelf.parameter);
+		// this.varChange = sessionStorage.getItem("AGComponents_AGSelect_" + mySelf.parameter);
+		if (mySelf.varChange && mySelf.varChange === "change") {
+			mySelf.varChange = null;
+			//sessionStorage.removeItem("AGComponents_AGSelect_" + mySelf.parameter);
 			return;
 		}
 
@@ -36,7 +38,8 @@ var AGSelect = InputBaseComponent.extend({
 		mySelect.on("change", (function(_mySelf) {
 			return function() {
 				if (_mySelf.listeners.valueOf(_mySelf.parameter) > -1) {
-					sessionStorage.setItem("AGComponents_AGSelect_" + _mySelf.parameter, "change");
+					//sessionStorage.setItem("AGComponents_AGSelect_" + _mySelf.parameter, "change");
+					_mySelf.varChange = "change";
 				}
 
 				_mySelf.value = $(this).val() !== null ? $(this).val().toString() : "";
