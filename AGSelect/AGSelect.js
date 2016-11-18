@@ -86,6 +86,12 @@ var AGSelect = InputBaseComponent.extend({
 		mySelect.selectpicker('render');
 
 		if (!mySelf.value || mySelf.value != param) {
+			if (mySelf.valueIfEmpty !== "" && !mySelf.firstTime) {
+				mySelf.firstTime = true;
+				param = mySelf.valueIfEmpty;
+				Dashboards.setParam(mySelf.parameter, param);
+			}
+
 			mySelf.value = param;
 			Dashboards.processChange(mySelf.name);
 		}
