@@ -30,7 +30,6 @@
       <Property>orientation</Property>
       <Property>size</Property>
       <Property>style</Property>
-      <Property>buttonType</Property>
       <Property>valueIfEmpty</Property>
     </Model>
     <Implementation supportsLegacy="true" supportsAMD="false">
@@ -102,25 +101,6 @@
             <Value display="Info">btn-info</Value>
             <Value display="Warning">btn-warning</Value>
             <Value display="Danger">btn-danger</Value>
-          </Values>
-        </DesignerProperty>
-
-        <DesignerProperty>
-          <Header>
-            <Name>buttonType</Name>
-            <Parent>BaseProperty</Parent>
-            <DefaultValue>radio</DefaultValue>
-            <Description>Type</Description>
-            <Tooltip>Defines the type of the buttons</Tooltip>
-            <InputType type="valuelist"/>
-            <OutputType>String</OutputType>
-            <Order>58</Order>
-            <Advanced>false</Advanced>
-            <Version>1.0</Version>
-          </Header>
-          <Values>
-            <Value display="Check Box">checkbox</Value>
-            <Value display="Radio Button">radio</Value>
           </Values>
         </DesignerProperty>
 

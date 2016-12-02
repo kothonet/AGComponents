@@ -80,8 +80,7 @@ var AGSelect = InputBaseComponent.extend({
 	        mySelect.append(myOption);
 	    }
 
-		$("#" + this.htmlObject).empty();
-		$("#" + this.htmlObject).append(mySelect);
+		mySelect.appendTo($("#" + mySelf.htmlObject).empty());
 
 		mySelect.selectpicker('render');
 

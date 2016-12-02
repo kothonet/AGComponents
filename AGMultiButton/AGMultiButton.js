@@ -62,7 +62,7 @@ var AGMultiButton = InputBaseComponent.extend({
 
 			var myInput = $("<input/>").attr({
 			  id: "rad_" + id,
-			  type: mySelf.buttonType,
+			  type: radio,
 			  value: id,
 			  autocomplete: "off",
 			  name: "options"
@@ -72,8 +72,7 @@ var AGMultiButton = InputBaseComponent.extend({
 			myDiv.append(myLabel);
 		}
 
-		$("#" + this.htmlObject).empty();
-		$("#" + this.htmlObject).append(myDiv);
+		myDiv.appendTo($("#" + mySelf.htmlObject).empty());
 
 		if (!mySelf.value || mySelf.value != param) {
 			mySelf.value = param;
