@@ -5,7 +5,7 @@ var AGMultiButton = InputBaseComponent.extend({
 		var param = mySelf._getParameterValue();
 
 		var myDiv = $("<div/>").attr({
-		  "role": "group"
+		  	role: "group"
 	  	}).addClass(mySelf.orientation);
 
 		myDiv.on("click", "button", (function(_myDiv, _mySelf) {
