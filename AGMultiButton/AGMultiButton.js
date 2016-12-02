@@ -35,7 +35,7 @@ var AGMultiButton = InputBaseComponent.extend({
 
 			var params = param != null ? param.split(",") : [];
 			if (params.indexOf(id) > -1) {
-			    $(myButton).addClass("active");
+			    myButton.addClass("active");
 			}
 
 			myDiv.append(myButton);
