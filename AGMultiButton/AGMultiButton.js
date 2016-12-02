@@ -30,8 +30,7 @@ var AGMultiButton = InputBaseComponent.extend({
 			var myButton = $("<button/>").attr({
 			        id: "btn_" + id,
 					type: "button"
-			        class: "btn"
-			    }).addClass(mySelf.style).text(text);
+			    }).addClass("btn").addClass(mySelf.style).text(text);
 
 			var params = param != null ? param.split(",") : [];
 			if (params.indexOf(id) > -1) {
