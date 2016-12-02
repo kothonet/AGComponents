@@ -5,12 +5,12 @@ var AGMultiButton = InputBaseComponent.extend({
 		var param = mySelf._getParameterValue();
 
 		var myDiv = $("<div/>").attr({
-		  "data-toggle": "buttons"
+		  "role": "group"
 	  	}).addClass(mySelf.orientation);
 
-		myDiv.on("click", "label", (function(_myDiv, _mySelf) {
+		myDiv.on("click", "button", (function(_myDiv, _mySelf) {
 		  	return function() {
-				_mySelf.value = $(this).find("input").val();
+				_mySelf.value = $(this).find("button").val();
 
 				if (_mySelf.value != _mySelf._getParameterValue()) {
 					Dashboards.processChange(_mySelf.name);
@@ -27,26 +27,18 @@ var AGMultiButton = InputBaseComponent.extend({
 			var id = mySelf.valueAsId ? myData[i][1] : myData[i][0];
 			var text = myData[i][1];
 
-			var myLabel = $("<label/>").attr({
+			var myButton = $("<button/>").attr({
 			        id: "btn_" + id,
+					type: "button"
 			        class: "btn"
 			    }).addClass(mySelf.style).text(text);
 
 			var params = param != null ? param.split(",") : [];
 			if (params.indexOf(id) > -1) {
-			    $(myLabel).addClass("active");
+			    $(myButton).addClass("active");
 			}
 
-			var myInput = $("<input/>").attr({
-			  id: "rad_" + id,
-			  type: "radio",
-			  value: id,
-			  autocomplete: "off",
-			  name: "options"
-			});
-
-			myLabel.append(myInput);
-			myDiv.append(myLabel);
+			myDiv.append(myButton);
 		}
 
 		myDiv.appendTo($("#" + mySelf.htmlObject).empty());

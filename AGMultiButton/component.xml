@@ -30,7 +30,6 @@
       <Property>orientation</Property>
       <Property>size</Property>
       <Property>style</Property>
-      <Property>valueIfEmpty</Property>
     </Model>
     <Implementation supportsLegacy="true" supportsAMD="false">
       <Code src="AGMultiButton.js"/>
@@ -102,21 +101,6 @@
             <Value display="Warning">btn-warning</Value>
             <Value display="Danger">btn-danger</Value>
           </Values>
-        </DesignerProperty>
-
-        <DesignerProperty>
-          <Header>
-            <Name>valueIfEmpty</Name>
-            <Parent>BaseProperty</Parent>
-            <DefaultValue></DefaultValue>
-            <Description>Value if empty</Description>
-            <Tooltip>Defines value if no values is selected</Tooltip>
-            <InputType>String</InputType>
-            <OutputType>String</OutputType>
-            <Order>59</Order>
-            <Advanced>false</Advanced>
-            <Version>1.0</Version>
-          </Header>
         </DesignerProperty>
 
       </CustomProperties>
