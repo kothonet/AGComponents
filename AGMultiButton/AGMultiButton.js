@@ -10,10 +10,11 @@ var AGMultiButton = InputBaseComponent.extend({
 
 		myDiv.on("click", "button", (function(_myDiv, _mySelf) {
 		  	return function() {
-				_mySelf.value = $(this).find("button").val();
+				_mySelf.value = $(this).val();
 
 				if (_mySelf.value != _mySelf._getParameterValue()) {
 					Dashboards.processChange(_mySelf.name);
+					$(this).addClass("active").siblings().removeClass("active");
 				}
 			}
 		})(myDiv, mySelf));
