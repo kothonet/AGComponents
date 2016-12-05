@@ -31,7 +31,7 @@ var AGMultiButton = InputBaseComponent.extend({
 			var myButton = $("<button/>").attr({
 			        id: "btn_" + id,
 					type: "button",
-					aria-label: id
+					"aria-label": id
 			    }).addClass("btn").addClass(mySelf.style).text(text);
 
 			var params = param != null ? param.split(",") : [];
