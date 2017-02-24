@@ -36,7 +36,7 @@ var AGSelect = InputBaseComponent.extend({
     	});
 
     	if (mySelf.maxWidth) {
-    		mySelect.attr("max-width", mySelf.maxWidth);
+    		mySelect.attr("max-width", mySelf.maxWidth.toString() + "px");
     	}
 
 		mySelect.on("change", (function(_mySelf) {

@@ -109,9 +109,9 @@
           <Header>
             <Name>maxWidth</Name>
             <Parent>BaseProperty</Parent>
-            <DefaultValue></DefaultValue>
+            <DefaultValue>400</DefaultValue>
             <Description>Max Width</Description>
-            <Tooltip>Defines the max width of the component</Tooltip>
+            <Tooltip>Defines the max width in pixels of the component</Tooltip>
             <InputType>Integer</InputType>
             <OutputType>Integer</OutputType>
             <Order>59</Order>
