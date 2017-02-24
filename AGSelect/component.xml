@@ -28,7 +28,7 @@
       <Property>tooltip</Property>
       <Property>listeners</Property>
       <Property>multiple</Property>
-      <Property>max-width</Property>
+      <Property>maxWidth</Property>
       <Property>search</Property>
       <Property>valueIfEmpty</Property>
       <Property>title</Property>
