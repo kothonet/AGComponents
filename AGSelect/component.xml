@@ -28,6 +28,7 @@
       <Property>tooltip</Property>
       <Property>listeners</Property>
       <Property>multiple</Property>
+      <Property>max-width</Property>
       <Property>search</Property>
       <Property>valueIfEmpty</Property>
       <Property>title</Property>
@@ -99,6 +100,21 @@
             <InputType>String</InputType>
             <OutputType>String</OutputType>
             <Order>58</Order>
+            <Advanced>false</Advanced>
+            <Version>1.0</Version>
+          </Header>
+        </DesignerProperty>
+
+        <DesignerProperty>
+          <Header>
+            <Name>maxWidth</Name>
+            <Parent>BaseProperty</Parent>
+            <DefaultValue></DefaultValue>
+            <Description>Max Width</Description>
+            <Tooltip>Defines the max width of the component</Tooltip>
+            <InputType>Integer</InputType>
+            <OutputType>Integer</OutputType>
+            <Order>59</Order>
             <Advanced>false</Advanced>
             <Version>1.0</Version>
           </Header>

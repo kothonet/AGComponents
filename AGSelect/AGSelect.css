@@ -4,3 +4,7 @@
     background-color: #428bca;
     outline: 0;
 }
+
+.filter-option.pull-left {
+	white-space: normal;
+}

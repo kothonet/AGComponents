@@ -35,6 +35,10 @@ var AGSelect = InputBaseComponent.extend({
         	"data-size": "5",
     	});
 
+    	if (mySelf.maxWidth) {
+    		mySelect.attr("max-width", mySelf.maxWidth);
+    	}
+
 		mySelect.on("change", (function(_mySelf) {
 			return function() {
 				if (_mySelf.listeners.valueOf(_mySelf.parameter) > -1) {
