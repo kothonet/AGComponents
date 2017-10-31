@@ -91,7 +91,9 @@ var AGSelect = InputBaseComponent.extend({
 		if (!mySelf.value || mySelf.value != param) {
 			if (mySelf.valueIfEmpty && mySelf.valueIfEmpty !== "" && !mySelf.firstTime) {
 				mySelf.firstTime = true;
-				param = mySelf.valueIfEmpty;
+				if (param === '') {
+					param =  mySelf.valueIfEmpty;
+				}
 				Dashboards.setParam(mySelf.parameter, param);
 			}
 
