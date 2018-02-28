@@ -1,0 +1,66 @@
+
+define([
+  'cdf/components/InputBaseComponent',
+  'cdf/lib/jquery'
+], function(InputBaseComponent, $) {
+
+	return InputBaseComponent.extend({
+
+		draw: function(myData) {
+			var mySelf = this;
+			var param = mySelf._getParameterValue();
+
+			var myDiv = $("<div/>").attr({
+			  	role: "group"
+		  	}).addClass(mySelf.orientation);
+
+			myDiv.on("click", "button", (function(_myDiv, _mySelf) {
+			  	return function() {
+					_mySelf.value = $(this).attr('aria-label');
+
+					if (_mySelf.value != _mySelf._getParameterValue()) {
+						mySelf.dashboard.processChange(_mySelf.name);
+						$(this).addClass("active").siblings().removeClass("active");
+					}
+				}
+			})(myDiv, mySelf));
+
+			if (mySelf.size !== 'empty') {
+			  	myDiv.addClass(mySelf.size);
+			}
+
+			for (var i=0; i<myData.length; i++) {
+
+				var id = mySelf.valueAsId ? myData[i][1] : myData[i][0];
+				var text = myData[i][1];
+
+				var myButton = $("<button/>").attr({
+				        id: "btn_".concat(id),
+						type: "button",
+						"aria-label": id
+				    }).addClass("btn").addClass(mySelf.style).text(text);
+
+				var params = param != null ? param.split(",") : [];
+				if (params.indexOf(id) > -1) {
+				    myButton.addClass("active");
+				}
+
+				myDiv.append(myButton);
+			}
+
+			myDiv.appendTo($("#".concat(mySelf.htmlObject)).empty());
+
+			if (!mySelf.value || mySelf.value != param) {
+				mySelf.value = param;
+				mySelf.dashboard.processChange(mySelf.name);
+			}
+		},
+
+		getValue: function() {
+			var mySelf = this;
+			return mySelf.value;
+		}
+
+	});
+
+});

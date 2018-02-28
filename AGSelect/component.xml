@@ -33,15 +33,14 @@
       <Property>valueIfEmpty</Property>
       <Property>title</Property>
     </Model>
-    <Implementation supportsLegacy="true" supportsAMD="false">
+    <Implementation supportsLegacy="true" supportsAMD="true">
       <Code src="AGSelect.js"/>
       <Styles>
-        <Style version="1.10.0" src="bootstrap-select.min.css">AGBootstrapSelect</Style>
+        <Style version="1.10.0" src="lib/bootstrap-select.min.css">AGBootstrapSelect</Style>
         <Style version="1.0" src="AGSelect.css">AGSelect</Style>
       </Styles>
       <Dependencies>
-        <Dependency version="1.10.0" src="bootstrap-select.min.js">AGBootstrapSelect</Dependency>
-        <Dependency version="1.10.0" src="defaults-pt_BR.min.js">AGBootstrapSelectPtBR</Dependency>
+        <Dependency version="1.10.0" src="lib/bootstrap-select.js">AGBootstrapSelect</Dependency>
       </Dependencies>
       <CustomProperties>
 
