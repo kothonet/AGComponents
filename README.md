@@ -2,9 +2,9 @@
 ***Components for Pentaho CDE Bootstrap based***
 
 #### **Instalation**
-To install, copy this directory into
+To install, deploy this directory into
 
-* PENTAHO_HOME/pentaho-solutions/system/pentaho-cdf-dd/resources/custom/components/
+* Public/cde/components/
 
 and restart pentaho.
 
